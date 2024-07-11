@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 
+
 import Post from "./models/Post.js";
 import User from "./models/User.js";
 
@@ -17,6 +18,8 @@ import {users  ,posts} from "./data/index.js"
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js"
 import postsRouts from "./routes/posts.js"
+
+
 
 import { register } from "./controllers/auth.js";
 import { createPost } from "./controllers/posts.js";
