@@ -11,7 +11,7 @@ import {
 
 const router = express.Router();
 
-router.get("/:id",verifyToken, getUser);
+router.get("/:Id",verifyToken, getUser);
 router.get('/:id/friends',verifyToken,getUserFriends);
 router.get('/:id/:friendId',verifyToken,addRemoveFriend);
 

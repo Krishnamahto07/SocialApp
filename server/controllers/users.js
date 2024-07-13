@@ -1,13 +1,17 @@
 import User from "../models/User.js";
-
+import e from "express";
 /* READ */
 export const getUser = async (req, res) => {
     try {
-        const { id } = req.params;
-        const user = await User.findById(id);
+        console.log("INTO GETUSER ......")
+        console.log(req.params)
+        const { Id } = req.params;
+        console.log("ID : ",Id);
+        const user = await User.findById(Id);
+        console.log("USER : ",user);
         res.status(200).json(user);
     } catch (err) {
-        res.status(404).json({ message: err.message });
+        res.status(404).json({success:false , message: err });
     }
 };
 

@@ -2,7 +2,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
-// this is controller
 export const register = async(req,res) =>{
     // console.log("ON REGISTER ...")
     try {

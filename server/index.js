@@ -62,7 +62,7 @@ app.post("/posts", verifyToken , upload.single("picture"), createPost );
 // ALL MIDDLEWARE ROUTES ......
 app.use('/auth', authRoutes);
 
-app.use("/user",userRoutes);
+app.use("/users",userRoutes);
 
 app.use('/posts',postsRouts)
 
