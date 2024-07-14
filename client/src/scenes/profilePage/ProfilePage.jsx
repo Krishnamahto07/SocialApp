@@ -17,7 +17,7 @@ const ProfilePage = () => {
 
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${uid}`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/users/${uid}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

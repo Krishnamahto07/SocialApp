@@ -10,10 +10,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 
-import Post from "./models/Post.js";
-import User from "./models/User.js";
+// import Post from "./models/Post.js";
+// import User from "./models/User.js";
 
-import {users  ,posts} from "./data/index.js"
+// import {users  ,posts} from "./data/index.js"
 
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js"

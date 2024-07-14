@@ -26,7 +26,7 @@ const UserWidgets = ( {userId,picturePath} ) =>{
     const getUser = async( ) =>{
         try {
             
-            const res = await fetch(`http://localhost:3001/users/${Id}`
+            const res = await fetch(`${process.env.REACT_APP_BASE_URL}/users/${Id}`
                 ,
                 {
                     method:"GET",

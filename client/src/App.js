@@ -30,10 +30,7 @@ function App() {
                 <Route path="/" element={<LoginPage/>} />
                 <Route path="/home" element={ isAuth ? (<HomePage/>) : (<Error/>)} />
                 <Route path="/profile/:uid" element={ isAuth ? (<ProfilePage/>) : (<Error/>)} />
-
-
-
-
+                
                 <Route path='*' element={<Error />}/>
 
               </Routes>
