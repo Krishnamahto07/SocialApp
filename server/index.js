@@ -40,6 +40,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
+const port = process.env.PORT || 6000;
 
 // /* FILE STORAGE */
 const storage = multer.diskStorage({
@@ -65,10 +66,7 @@ app.use("/users",userRoutes);
 app.use('/posts',postsRouts)
 
 /* MONGOOSE SETUP */
-let port;
-  if(!port) port = process.env.PORT;
 
-  if(!port) port = 6000;
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=> {
