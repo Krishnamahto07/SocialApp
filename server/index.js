@@ -65,17 +65,19 @@ app.use("/users",userRoutes);
 app.use('/posts',postsRouts)
 
 /* MONGOOSE SETUP */
-const port = process.env.PORT || 6000;
+let port;
+  if(!port) port = process.env.PORT;
+
+  if(!port) port = 6000;
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=> {
   console.log("DB CONNECTED");
-  
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${ port }`);
+  });
 }).catch((error) => console.log(`${error} did not connect `));
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${ port }`);
-});
 
 
 
