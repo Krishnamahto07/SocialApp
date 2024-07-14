@@ -78,6 +78,9 @@ mongoose.connect(process.env.MONGO_URL).then(()=> {
   });
 }).catch((error) => console.log(`${error} did not connect `));
 
+app.get('/fuck', (req, res) => {
+  res.send('Hello World!');
+});
 
 
 
