@@ -3,11 +3,8 @@ import e from "express";
 /* READ */
 export const getUser = async (req, res) => {
     try {
-        
-        
         const { Id } = req.params;
         const user = await User.findById(Id);
-        console.log("GET USER SUCCESSFULL : ",user);
         res.status(200).json(user);
     } catch (err) {
         res.status(404).json({success:false , message: err });
@@ -16,7 +13,6 @@ export const getUser = async (req, res) => {
 
 export const getUserFriends = async (req, res) => {
     try {
-        console.log("GETUSER FRIENDS ..........")
 
         const { id } = req.params;
         console.log("ID : ",id);
@@ -61,7 +57,6 @@ export const addRemoveFriend = async (req, res) => {
                 return { _id, firstName, lastName, occupation, location, picturePath };
             }
         );
-
         res.status(200).json(formattedFriends);
     } catch (err) {
         res.status(404).json({ message: err.message });

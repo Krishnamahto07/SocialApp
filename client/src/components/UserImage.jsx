@@ -10,7 +10,7 @@ const UserImage = ({ image, size = "60px" }) => {
         // height={size}
         className="h-[55px] w-[50px]"
         alt="user"
-        src={`http://localhost:7000/assets/${image}`}
+        src={`http://localhost:3001/assets/${image}`}
       />
     </Box>
   );

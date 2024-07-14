@@ -26,7 +26,7 @@ const UserWidgets = ( {userId,picturePath} ) =>{
     const getUser = async( ) =>{
         try {
             
-            const res = await fetch(`http://localhost:7000/users/${Id}`
+            const res = await fetch(`http://localhost:3001/users/${Id}`
                 ,
                 {
                     method:"GET",

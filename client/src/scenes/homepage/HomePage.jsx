@@ -14,6 +14,8 @@ const HomePage = () => {
   const user = useSelector((state) => state.user);
   const fullName = `${user.firstName} ${user.lastName}`;
 
+  console.log("ID HOMEPAGE :",_id);
+
   return (
       <Box>
         <Navbar fullName={fullName}/>
