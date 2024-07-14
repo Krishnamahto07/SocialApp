@@ -37,13 +37,15 @@ export const verifyToken = async (req, res, next) => {
     if (!token) {
       return res.status(403).send("Access Denied");
     }
-
+    // console.log("Token : ",token);
     if (token.startsWith("Bearer ")) {
       token = token.slice(7, token.length).trimLeft();
+      // console.log("token -->",token);
     }
 
     const verified = jwt.verify(token, process.env.JWT_SECRET);
     req.user = verified;
+    console.log("VERIFY TOKEN SUCCESSFULL ......")
     next();
   } catch (err) {
     res.status(500).json({ error: err.message });

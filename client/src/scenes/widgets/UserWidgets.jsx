@@ -25,13 +25,12 @@ const UserWidgets = ( {userId,picturePath} ) =>{
 
     const getUser = async( ) =>{
         try {
-            console.log("ID : ",Id);
-            console.log("Calling getUser")
+            
             const res = await fetch(`http://localhost:7000/users/${Id}`
                 ,
                 {
                     method:"GET",
-                    headers : { Authorization : `Brearer ${token}`}
+                    headers : { Authorization : `Bearer ${token}`}
                 }
             );
 
@@ -70,7 +69,7 @@ const UserWidgets = ( {userId,picturePath} ) =>{
           onClick={() => navigate(`/profile/${userId}`)}
         >
           <FlexBetween gap="1rem">
-            <UserImage image={picturePath} />
+            <UserImage image={`${picturePath}`} />
             <Box>
               <Typography
                 variant="h4"
