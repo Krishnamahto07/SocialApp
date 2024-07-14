@@ -134,7 +134,7 @@ const Navbar = ({fullName}) => {
             },
           }}
         >
-          Sociopedia
+          Be Social
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
