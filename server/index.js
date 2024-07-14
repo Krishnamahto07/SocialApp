@@ -41,8 +41,6 @@ app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 
-
-
 // /* FILE STORAGE */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -67,27 +65,18 @@ app.use("/users",userRoutes);
 app.use('/posts',postsRouts)
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 6000;
+const port = process.env.PORT || 6000;
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=> {
   console.log("DB CONNECTED");
-
-  // User.insertMany(users);
-  // Post.insertMany(posts);
   
 }).catch((error) => console.log(`${error} did not connect `));
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${ PORT }`);
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${ port }`);
 });
 
 
 
 
-
-// E1ZD7s6TrTu3aHRC  password
-// 6V9uALDmpkoNVQKU   password
-// mongodb+srv://krishna84044:<password>@socialapp.mjnfgz2.mongodb.net/  atlas link
-
-// mongodb+srv://krishna84044:<password>@socialapp.mjnfgz2.mongodb.net/?retryWrites=true&w=majority&appName=socialApp dblink
